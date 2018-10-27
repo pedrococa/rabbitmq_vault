@@ -1,5 +1,4 @@
 # Notes and scripts to demo Rabbitmq and Hashicorp Vault 
-
 ## Context
 
 - [RabbitMQ](https://www.rabbitmq.com/) is an open source message broker software implementing several message queuing protocols: AMQP, STOMP, MQTT, etc.
@@ -55,7 +54,7 @@ Done!
 
 - vault read rabbitmq/creds/my-role
 
-'''
+```css
 your_user@your_hostname:~/$ vault read rabbitmq/creds/my-role
 Key                Value
 ---                -----
@@ -64,17 +63,16 @@ lease_duration     768h
 lease_renewable    true
 password           0c895f65-58b0-3bf0-cc56-f09xxxx05b32
 username           root-3ecb4570-0387-269f-1895-55c2decb6cef 
-'''
+```
 
 Listing the RabbitMQ users:
 
-'''
+```css
 your_user@your_hostname:~/$ sudo rabbitmqctl list_users
 Listing users ...
 admin	[administrator]
 root-3ecb4570-0387-269f-1895-55c2decb6cef       []
-'''
-
+```
 ### Revoking credentials:
 
 
