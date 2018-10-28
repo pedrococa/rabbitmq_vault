@@ -95,11 +95,45 @@ Or if you fancy web interfaces, point your browser to the web admin tool that sh
 
 ### Revoking credentials:
 
-TODO
+Revoke the lease associated with the credentials that you want to get rid of with
+
+```
+vault lease revoke <lease_id>
+```
+
+You will see something similar to this output:
+
+```css 
+your_user@your_hostname:~$ vault lease revoke rabbitmq/creds/my-role/25711418-2044-a3f8-4917-bfxxxx47d3b8
+Success! Revoked lease: rabbitmq/creds/my-role/25711418-2044-a3f8-4917-bfxxxx47d3b8
+```
+
 
 ### Messaging
 
-TODO
+Additionally if you want to publish simple messages and subscribe to them, you can use the scripts provided:
+
+- Start the consumer:
+
+```css 
+your_user@your_hostname:~$ ./consumer.py
+ [*] Waiting for messages. To exit press CTRL+C
+```
+
+- Send a message with the publisher:
+
+```css 
+your_user@your_hostname:~$ ./publisher.py 
+ [x] Sent 'Hello World!'
+```
+
+- Then the consumer will get and process the message:
+
+```css 
+your_user@your_hostname:~$ ./consumer.py 
+ [*] Waiting for messages. To exit press CTRL+C
+ [x] Received b'Hello World!'
+```
 
 ## Troubleshooting and extra notes:
 
