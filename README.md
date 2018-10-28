@@ -70,7 +70,7 @@ vault read rabbitmq/creds/my-role
 
 You will see something similar to this output:
 
-```css
+```
 your_user@your_hostname:~/$ vault read rabbitmq/creds/my-role
 Key                Value
 ---                -----
@@ -83,7 +83,7 @@ username           root-3ecb4570-0387-269f-1895-55c2decb6cef
 
 You can now check that Vault has generated the credentials listing the RabbitMQ users with the cli tool rabbitmqctl:
 
-```css
+```
 your_user@your_hostname:~/$ sudo rabbitmqctl list_users
 Listing users ...
 admin	[administrator]
@@ -103,7 +103,7 @@ vault lease revoke <lease_id>
 
 You will see something similar to this output:
 
-```css 
+```
 your_user@your_hostname:~$ vault lease revoke rabbitmq/creds/my-role/25711418-2044-a3f8-4917-bfxxxx47d3b8
 Success! Revoked lease: rabbitmq/creds/my-role/25711418-2044-a3f8-4917-bfxxxx47d3b8
 ```
@@ -115,21 +115,21 @@ Additionally if you want to publish simple messages and subscribe to them, you c
 
 - Start the consumer:
 
-```css 
+```
 your_user@your_hostname:~$ ./consumer.py
  [*] Waiting for messages. To exit press CTRL+C
 ```
 
 - Send a message with the publisher:
 
-```css 
+```
 your_user@your_hostname:~$ ./publisher.py 
  [x] Sent 'Hello World!'
 ```
 
 - Then the consumer will get and process the message:
 
-```css 
+```
 your_user@your_hostname:~$ ./consumer.py 
  [*] Waiting for messages. To exit press CTRL+C
  [x] Received b'Hello World!'
@@ -139,7 +139,7 @@ your_user@your_hostname:~$ ./consumer.py
 
 If you try to config vault using the port 5672 you might get this error:
 
-```css
+```bash
 failed to validate the connection: Get http://localhost:5672/api/users/: net/http: HTTP/1.x transport connection broken: malformed HTTP response "AMQP\x00\x00\t\x01"
 ```
 
