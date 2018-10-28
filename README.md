@@ -1,11 +1,11 @@
-# Notes and scripts to demo Rabbitmq and Hashicorp Vault 
+# RabbitMQ and Hashicorp Vault demo
 ## Context and content
 
 - [RabbitMQ](https://www.rabbitmq.com/) is an open source message broker software implementing several message queuing protocols: AMQP, STOMP, MQTT, etc.
 
 - [Hashicorp Vault](https://www.vaultproject.io/) is an open source tool for managing secrets.
 
-This repo contains some notes demo Vault with a RabbitMQ setup and it also contains two simple Python scripts to interact with the RabbitMQ broker with simple messages
+This repo contains some notes to demo Vault with RabbitMQ credentials and it also contains two simple Python scripts to interact with the RabbitMQ broker with simple messages using the Pika library.
 
 - Publisher.py
 - Consumer.py
@@ -90,6 +90,8 @@ admin	[administrator]
 root-3ecb4570-0387-269f-1895-55c2decb6cef       []
 ```
 Or if you fancy web interfaces, point your browser to the web admin tool that should be accessed on the URL "Your_RabbitMQ_server:15672/#/users" of the host running the RabbitMQ server.
+
+![alt text](img/RabbitMQ_List_Users.png)
 
 ### Revoking credentials:
 
