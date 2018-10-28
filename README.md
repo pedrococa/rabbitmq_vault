@@ -68,7 +68,7 @@ Just read from the Vault path to generate the credentials:
 vault read rabbitmq/creds/my-role
 ```
 
-You will seee something similar to this output:
+You will see something similar to this output:
 
 ```css
 your_user@your_hostname:~/$ vault read rabbitmq/creds/my-role
